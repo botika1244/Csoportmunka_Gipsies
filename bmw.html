@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Gipsies, BMW" />
+    <meta name="description" content="Gipsies, BMW" />
+    <link rel="stylesheet" href="bmw.mercedes.css">
+    <title>Gipsies</title>
+  </head>
+<body>
+    <a href="index.html" class="button">Audi</a>
+    <a href="bmw.html" class="button">BMW</a>
+    <a href="mercedes-brabus.html" class="button">Mercedes Brabus</a>
+    <a href="porsche.html" class="button">Porsche</a>
+    
+ 
+    <h1>BMW M modellek</h1>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="carousel-item">
+                <h3>BMW M3</h3>
+                <p>Az M3 az egyik legismertebb sportautó, amely az évek során szinonimájává vált a teljesítménynek és a precíz kormányzásnak.</p>
+                <img src="kepek/m3.jpg" alt="BMW M3" height="300px" width="600px">
+            </div>
+            <div class="carousel-item">
+                <h3>BMW M4</h3>
+                <p>Az M4 a 4-es sorozat sportos kupé változata, amely lélegzetelállító dizájnjával és lenyűgöző teljesítményével hódít.</p>
+                <img src="kepek/m4.jpg" alt="BMW M4" height="300px" width="600px">
+            </div>
+            <div class="carousel-item">
+                <h3>BMW M5</h3>
+                <p>Az M5 egy nagy teljesítményű luxuslimuzin, amely ötvözi a prémium kényelmet a motorsport teljesítménnyel.</p>
+                <img src="kepek/m5.jpg" alt="BMW M5" height="300px" width="600px">
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="prevSlide()">Előző</button>
+        <button onclick="nextSlide()">Következő</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const carousel = document.getElementById('carousel');
+            const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
